@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const url = 'http://www.baidu.com?name=zhangsan&age=18&sex=nan#'
+    const process = (url) => {
+        const index1 = url.indexOf('?'),   // 返回字符串首次出现的位置
+            index2 = url.indexOf('#'),
+            params = url.slice(index1 + 1, index2).split('&') // slice 截取字符串  split() 返回数组
+        return params.reduce((pre, curr) => {
+
+            const [key, value] = curr.split('=')
+            pre[key] = value
+            return pre
+        }, {})
+    }
+
+    console.log(process(url));
+</script>
+
+</html>

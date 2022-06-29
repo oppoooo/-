@@ -1,27 +1,22 @@
 <template>
-  <div>
-    nothing
-  </div>
+    <div>
+        <input type="text" name="" id="" :value="val" @input="fn">
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'VuecliDemoApp',
-
-  data() {
-    return {
-      
-    };
-  },
-
-  mounted() {
-    
-  },
-
-  methods: {
-    
-  },
-};
+    export default {
+        data() {
+            return {
+                val: ''
+            }
+        },
+        methods: {
+            fn(e) {
+                this.val = e.target.value
+            }
+        }
+    }
 </script>
 
 <style scoped>
